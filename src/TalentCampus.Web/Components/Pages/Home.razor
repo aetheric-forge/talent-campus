@@ -1,0 +1,25 @@
+﻿@page "/"
+@using AethericForge.Runtime.Institutions.Campus
+@using TalentCampus.Web.Hosting
+@inject ICampus Campus
+
+<PageTitle>Talent Campus</PageTitle>
+
+<h1>Talent Campus</h1>
+
+<p>Define the roles the Campus needs and steward the human and artificial talent trusted to fill them.</p>
+
+<section>
+    <h2>@Talent.Context.Template.Descriptor.Name institution</h2>
+    <p>@Talent.Context.Template.Descriptor.Description</p>
+    <dl>
+        <dt>Version</dt>
+        <dd>@Talent.Context.Template.Descriptor.Version</dd>
+        <dt>Defined roles</dt>
+        <dd>@Talent.Steward.ListRoles().Count</dd>
+    </dl>
+</section>
+
+@code {
+    private TalentCampus.Institutions.Talent.ITalent Talent => Campus.Talent();
+}

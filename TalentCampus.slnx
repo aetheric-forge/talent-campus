@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TalentCampus.Application/TalentCampus.Application.csproj" />
+    <Project Path="src/TalentCampus.Core/TalentCampus.Core.csproj" />
+    <Project Path="src/TalentCampus.Institutions.Talent/TalentCampus.Institutions.Talent.csproj" />
+    <Project Path="src/TalentCampus.Web/TalentCampus.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TalentCampus.Core.Tests/TalentCampus.Core.Tests.csproj" />
+    <Project Path="tests/TalentCampus.Institutions.Talent.Tests/TalentCampus.Institutions.Talent.Tests.csproj" />
+  </Folder>
+</Solution>
