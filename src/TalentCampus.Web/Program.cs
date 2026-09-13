@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddTalentCampus();
+builder.Services.AddTalentCampus(Path.Combine(builder.Environment.ContentRootPath, "App_Data", "roles.json"));
 
 var app = builder.Build();
 

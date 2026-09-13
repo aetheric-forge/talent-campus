@@ -10,9 +10,9 @@ public sealed class TalentSteward : ITalentSteward
     public RoleDefinition DefineRole(
         string name,
         string purpose,
-        IEnumerable<string> requiredCapabilities)
+        IEnumerable<string> requiredCapabilities, string responsibilities = "", string successCriteria = "")
     {
-        var role = new RoleDefinition(RoleId.New(), name, purpose, requiredCapabilities);
+        var role = new RoleDefinition(RoleId.New(), name, purpose, requiredCapabilities, responsibilities, successCriteria);
 
         lock (_gate)
         {

@@ -6,8 +6,12 @@ public sealed class RoleDefinition
         RoleId id,
         string name,
         string purpose,
-        IEnumerable<string> requiredCapabilities)
+        IEnumerable<string> requiredCapabilities,
+        string responsibilities = "",
+        string successCriteria = "")
     {
+        Responsibilities = responsibilities.Trim();
+        SuccessCriteria = successCriteria.Trim();
         Id = id ?? throw new ArgumentNullException(nameof(id));
         Name = Required(name, nameof(name));
         Purpose = Required(purpose, nameof(purpose));
@@ -27,6 +31,8 @@ public sealed class RoleDefinition
         }
     }
 
+    public string Responsibilities { get; }
+    public string SuccessCriteria { get; }
     public RoleId Id { get; }
     public string Name { get; }
     public string Purpose { get; }

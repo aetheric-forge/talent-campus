@@ -9,9 +9,9 @@ namespace TalentCampus.Web.Hosting;
 
 public static class TalentCampusExtensions
 {
-    public static IServiceCollection AddTalentCampus(this IServiceCollection services)
+    public static IServiceCollection AddTalentCampus(this IServiceCollection services, string rolesPath)
     {
-        services.AddSingleton<ITalentSteward, TalentSteward>();
+        services.AddSingleton<ITalentSteward>(new FileTalentSteward(rolesPath));
         services.AddSingleton<ICampus>(serviceProvider =>
         {
             var campusTemplate = InstitutionTemplateBuilder.Create()

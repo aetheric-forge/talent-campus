@@ -6,3 +6,6 @@
 *.user
 *.suo
 .env*
+!.env.example
+
+**/App_Data/
