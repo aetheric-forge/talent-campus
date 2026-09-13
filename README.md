@@ -12,7 +12,7 @@ The initial vertical slice establishes:
 - a small role-definition model shared by future human and agent workflows; and
 - executable tests proving role validation and institutional resolution.
 
-Recruiting-system adapters, persistence, candidacy, evaluation, assignment, and persona development are intentionally deferred until their stories and boundaries are explicit.
+The initial checkpoint deferred recruiting-system adapters, persistence, candidacy, evaluation, assignment, and persona development. The v0.1 roadmap below records subsequent implementation progress.
 
 ## Run
 
@@ -37,7 +37,15 @@ The directory is excluded from git. Stop the application before copying this fil
 for backup or restoring it. Run only one application process against this store.
 A malformed store causes an error rather than silently replacing existing data.
 
-The current slice covers role creation and listing. Persona development,
+AI Persona Development is available at `/personas`. Create and review a named
+persona with purpose, working style, strengths, and boundaries. Personas are
+independent of roles and do not provision or execute agents. Records are saved in
+`src/TalentCampus.Web/App_Data/personas.json`, with the same single-process and
+backup rules as roles. In Docker, both files use the existing data volume.
+Incomplete submissions retain the entered values; invalid stored data is never
+silently overwritten.
+
+The current slice covers role and persona creation, listing, and persistence.
 Recruitment, PostOffice delivery, and Decisions remain upcoming milestones.
 
 ## Docker
