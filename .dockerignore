@@ -1,0 +1,12 @@
+**/.git
+**/bin
+**/obj
+**/App_Data
+**/.env*
+**/*.user
+**/*.suo
+.vs
+.idea
+.vscode
+outputs
+work
