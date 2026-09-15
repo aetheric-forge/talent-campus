@@ -2,6 +2,8 @@ using AethericForge.Runtime.Institutions.Abstractions.Builders;
 using AethericForge.Runtime.Institutions.Abstractions.Models;
 using AethericForge.Runtime.Institutions.Campus;
 using TalentCampus.Application.Roles;
+using TalentCampus.Application.Recruitment;
+using TalentCampus.Core.Recruitment;
 using TalentCampus.Application.Personas;
 using TalentCampus.Core.Personas;
 using TalentCampus.Core.Roles;
@@ -11,11 +13,14 @@ namespace TalentCampus.Web.Hosting;
 
 public static class TalentCampusExtensions
 {
-    public static IServiceCollection AddTalentCampus(this IServiceCollection services, string rolesPath)
+    public static IServiceCollection AddTalentCampus(this IServiceCollection services, string rolesPath, IEnumerable<DecisionsDestination> destinations)
     {
         services.AddSingleton<ITalentSteward>(new FileTalentSteward(rolesPath));
         services.AddSingleton<IPersonaDirectory>(new FilePersonaDirectory(
             Path.Combine(Path.GetDirectoryName(Path.GetFullPath(rolesPath))!, "personas.json")));
+        services.AddSingleton<IRecruitmentOffice>(provider => new FileRecruitmentOffice(
+            Path.Combine(Path.GetDirectoryName(Path.GetFullPath(rolesPath))!, "recruitment.json"),
+            provider.GetRequiredService<ITalentSteward>(), provider.GetRequiredService<IPersonaDirectory>(), destinations));
         services.AddSingleton<ICampus>(serviceProvider =>
         {
             var campusTemplate = InstitutionTemplateBuilder.Create()

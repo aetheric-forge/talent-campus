@@ -1,11 +1,13 @@
 using TalentCampus.Web.Components;
+using TalentCampus.Core.Recruitment;
 using TalentCampus.Web.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddTalentCampus(Path.Combine(builder.Environment.ContentRootPath, "App_Data", "roles.json"));
+builder.Services.AddTalentCampus(Path.Combine(builder.Environment.ContentRootPath, "App_Data", "roles.json"),
+    builder.Configuration.GetSection("Recruitment:DecisionsOffices").Get<DecisionsDestination[]>() ?? []);
 
 var app = builder.Build();
 

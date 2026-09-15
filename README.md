@@ -45,8 +45,19 @@ backup rules as roles. In Docker, both files use the existing data volume.
 Incomplete submissions retain the entered values; invalid stored data is never
 silently overwritten.
 
-The current slice covers role and persona creation, listing, and persistence.
-Recruitment, PostOffice delivery, and Decisions remain upcoming milestones.
+Recruitment Office is available at `/recruitment`. Register human candidates or
+select existing AI personas, choose a role and a configured Decisions office,
+and prepare a consideration with evidence and a recommendation. Each saved
+consideration preserves the role and talent details as a snapshot, even if
+the source records later change or disappear.
+
+Candidates and considerations are stored in `App_Data/recruitment.json` beside
+the role and persona stores, using the same single-process and backup rules.
+Configure available destinations in `Recruitment:DecisionsOffices` in
+`appsettings.json`; each requires a unique ID and a name. The supplied Local
+Decisions Office is a destination label for preparation. Considerations are
+saved locally; PostOffice delivery and Decisions processing remain upcoming
+milestones.
 
 ## Docker
 
