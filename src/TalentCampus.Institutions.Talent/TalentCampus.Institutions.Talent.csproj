@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../TalentCampus.Application/TalentCampus.Application.csproj" />
     <ProjectReference Include="../TalentCampus.Core/TalentCampus.Core.csproj" />
     <ProjectReference Include="../../runtime/src/Abstractions/Interfaces/AethericForge.Runtime.Abstractions.Interfaces/AethericForge.Runtime.Abstractions.Interfaces.csproj" />
     <ProjectReference Include="../../runtime/src/Institutions/AethericForge.Runtime.Institutions.Abstractions/AethericForge.Runtime.Institutions.Abstractions.csproj" />

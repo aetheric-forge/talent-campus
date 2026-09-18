@@ -23,7 +23,6 @@
     <ProjectReference Include="../../src/TalentCampus.Core/TalentCampus.Core.csproj" />
     <ProjectReference Include="../../src/TalentCampus.Institutions.Talent/TalentCampus.Institutions.Talent.csproj" />
     <ProjectReference Include="../../runtime/src/Institutions/AethericForge.Runtime.Institutions.Abstractions/AethericForge.Runtime.Institutions.Abstractions.csproj" />
-    <ProjectReference Include="../../runtime/src/Institutions/AethericForge.Runtime.Institutions.Campus/AethericForge.Runtime.Institutions.Campus.csproj" />
   </ItemGroup>
 
 </Project>
