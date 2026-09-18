@@ -98,3 +98,7 @@ specific deployment before publishing it externally.
 docker compose --env-file .env.local logs -f talent-campus
 docker compose --env-file .env.local down
 ```
+
+## Institution package ownership
+
+Talent now owns composition of its role, persona, and recruitment services. See [the ownership boundary](docs/architecture/institution-ownership.md).

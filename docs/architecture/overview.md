@@ -30,3 +30,6 @@ flowchart TD
 ```
 
 The web project is the composition root. Domain objects do not depend on Razor, persistence, identity providers, or recruiting vendors.
+
+
+The web host supplies deployment bindings while the Talent package owns composition of its operational services. See [institution ownership](institution-ownership.md).
